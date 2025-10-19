@@ -1,0 +1,608 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Professional Fintech Color Palette */
+  --background: #11224E;
+  --foreground: #EEEEEE;
+  --card: #1A2B5C;
+  --card-foreground: #EEEEEE;
+  --popover: #1A2B5C;
+  --popover-foreground: #EEEEEE;
+  --primary: #F87B1B;
+  --primary-foreground: #11224E;
+  --secondary: #CBD99B;
+  --secondary-foreground: #11224E;
+  --muted: #2A3B6B;
+  --muted-foreground: #B8C5D1;
+  --accent: #F87B1B;
+  --accent-foreground: #11224E;
+  --destructive: #EF4444;
+  --destructive-foreground: #EEEEEE;
+  --success: #10B981;
+  --success-foreground: #EEEEEE;
+  --border: #2A3B6B;
+  --input: #2A3B6B;
+  --ring: #F87B1B;
+  /* Chart colors - professional */
+  --chart-1: #F87B1B;
+  --chart-2: #CBD99B;
+  --chart-3: #10B981;
+  --chart-4: #EF4444;
+  --chart-5: #3B82F6;
+  --sidebar: #1A2B5C;
+  --sidebar-foreground: #EEEEEE;
+  --sidebar-primary: #F87B1B;
+  --sidebar-primary-foreground: #11224E;
+  --sidebar-accent: #2A3B6B;
+  --sidebar-accent-foreground: #EEEEEE;
+  --sidebar-border: #2A3B6B;
+  --sidebar-ring: #F87B1B;
+}
+
+.light {
+  /* Light Mode Alternative (Optional) */
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --primary: #3B82F6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #475569;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #EFF6FF;
+  --accent-foreground: #1E40AF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --success: #10B981;
+  --success-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #3B82F6;
+  --chart-1: #3B82F6;
+  --chart-2: #10B981;
+  --chart-3: #8B5CF6;
+  --chart-4: #F59E0B;
+  --chart-5: #EC4899;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #3B82F6;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #475569;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #3B82F6;
+}
+
+/* === PORTFOLIOPULSE DESIGN SYSTEM === */
+@theme {
+  /* Professional Slate Grayscale */
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
+
+  /* Finance-Grade Accent Colors */
+  --color-blue-500: #3B82F6;
+  --color-blue-600: #2563EB;
+  --color-blue-700: #1D4ED8;
+  --color-blue-400: #60A5FA;
+  --color-green-500: #10B981;
+  --color-green-600: #059669;
+  --color-green-400: #34D399;
+  --color-red-500: #EF4444;
+  --color-red-600: #DC2626;
+  --color-amber-500: #F59E0B;
+  --color-purple-500: #8B5CF6;
+
+  /* Additional color utilities */
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success-foreground: var(--success-foreground);
+  --color-success: var(--success);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    line-height: 1.5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+  h1 { @apply text-4xl font-bold; }
+  h2 { @apply text-3xl font-bold; }
+  h3 { @apply text-2xl font-semibold; }
+  h4 { @apply text-xl font-semibold; }
+  h5 { @apply text-lg font-semibold; }
+  h6 { @apply text-base font-semibold; }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto max-w-screen-2xl px-4 md:px-6 lg:px-8;
+  }
+
+  /* ===== PORTFOLIOPULSE COMPONENT STYLES ===== */
+
+  /* Primary Action Button */
+  .primary-btn {
+    @apply h-11 px-6 cursor-pointer bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Dashboard Layout */
+  .dashboard-header {
+    @apply sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+  }
+  .dashboard-nav {
+    @apply flex h-16 items-center justify-between;
+  }
+  .dashboard-content {
+    @apply container py-6 md:py-8;
+  }
+  .dashboard-grid {
+    @apply grid gap-6 md:grid-cols-3;
+  }
+
+  /* Card Components */
+  .card {
+    @apply bg-card border border-border rounded-lg shadow-sm overflow-hidden;
+  }
+  .card-header {
+    @apply px-6 py-4 border-b border-border;
+  }
+  .card-content {
+    @apply p-6;
+  }
+
+  /* Typography */
+  .heading-1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight text-foreground;
+  }
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight text-foreground;
+  }
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight text-foreground;
+  }
+  .heading-4 {
+    @apply text-xl font-semibold text-foreground;
+  }
+  .text-muted {
+    @apply text-muted-foreground;
+  }
+
+  /* Auth Pages */
+  .auth-layout {
+    @apply flex flex-col justify-between lg:flex-row h-screen bg-background relative overflow-hidden;
+  }
+  .auth-logo {
+    @apply pt-6 lg:pt-8 mb-8 lg:mb-12;
+  }
+  .auth-left-section {
+    @apply w-full lg:w-[45%] lg:h-screen px-6 lg:px-16 flex flex-col overflow-y-auto;
+  }
+  .auth-right-section {
+    @apply w-full max-lg:border-t max-lg:border-border lg:w-[55%] lg:h-screen bg-muted/30 px-6 py-4 md:p-6 lg:py-12 lg:px-18 flex flex-col justify-start;
+  }
+  .auth-blockquote {
+    @apply text-sm md:text-xl lg:text-2xl font-medium text-foreground mb-1 md:mb-6 lg:mb-8;
+  }
+  .auth-testimonial-author {
+    @apply text-xs md:text-lg font-bold text-foreground not-italic;
+  }
+  .auth-dashboard-preview {
+    @apply border-6 border-border left-0 hidden w-[1024px] h-auto max-w-none lg:block rounded-xl shadow-2xl;
+  }
+
+  /* Form Elements */
+  .form-title {
+    @apply text-4xl font-bold text-foreground mb-10;
+  }
+  .form-label {
+    @apply text-sm font-medium text-foreground;
+  }
+  .form-input {
+    @apply h-12 px-4 py-3 text-foreground text-base placeholder:text-muted-foreground border-input bg-background rounded-lg focus:!border-primary focus:ring-2 focus:ring-primary/20 transition-colors;
+  }
+  .select-trigger {
+    @apply w-full !h-12 px-4 py-3 text-base border-input bg-background text-foreground rounded-lg focus:!border-primary focus:ring-2 focus:ring-primary/20 transition-colors;
+  }
+  .country-select-trigger {
+    @apply h-12 px-4 py-3 text-base w-full justify-between font-normal border-input bg-background text-foreground rounded-lg focus:!border-primary focus:ring-2 focus:ring-primary/20;
+  }
+  .country-select-input {
+    @apply !bg-background text-foreground border-0 border-b border-input rounded-none focus:ring-0 placeholder:text-muted-foreground;
+  }
+  .country-select-empty {
+    @apply text-muted-foreground py-6 text-center !bg-background;
+  }
+  .country-select-item {
+    @apply text-foreground cursor-pointer px-3 py-2 rounded-sm bg-background hover:!bg-accent;
+  }
+  .footer-link {
+    @apply text-muted-foreground font-medium hover:text-primary hover:underline transition-colors;
+  }
+
+  /* Search Components */
+  .search-text {
+    @apply cursor-pointer hover:text-primary transition-colors;
+  }
+  .search-btn {
+    @apply cursor-pointer px-4 py-2 w-fit flex items-center gap-2 text-sm md:text-base bg-primary hover:bg-primary/80 text-primary-foreground font-medium rounded-lg transition-all duration-200;
+  }
+  .search-dialog {
+    @apply !bg-card lg:min-w-[800px] border-border fixed top-10 left-1/2 -translate-x-1/2 translate-y-10 shadow-xl rounded-xl;
+  }
+  .search-field {
+    @apply !bg-card border-b border-border relative;
+  }
+  .search-list {
+    @apply !bg-card max-h-[400px];
+  }
+  .search-list-indicator {
+    @apply px-5 py-2
+  }
+  .search-list-empty {
+    @apply py-6 !bg-transparent text-center text-muted-foreground;
+  }
+  .search-input {
+    @apply !bg-card border-0 text-foreground placeholder:text-muted-foreground focus:ring-0 text-base h-14 pr-10;
+  }
+  .search-loader {
+    @apply absolute right-12 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground animate-spin;
+  }
+  .search-count {
+    @apply py-2 px-4 text-sm font-medium text-muted-foreground bg-muted/50 border-b border-border;
+  }
+  .search-item {
+    @apply rounded-none my-1 px-2 w-full data-[selected=true]:bg-accent transition-colors;
+  }
+  .search-item-link {
+    @apply px-3 py-3 w-full cursor-pointer border-b border-border last:border-b-0 transition-colors flex items-center gap-3 hover:bg-accent/50;
+  }
+  .search-item-name {
+    @apply font-medium text-base text-foreground;
+  }
+  .nav-list {
+    @apply flex flex-col sm:flex-row p-2 gap-3 sm:gap-8 font-medium;
+  }
+  .stock-details-container {
+    @apply w-full grid-cols-1 gap-6 xl:grid-cols-3 space-y-6 sm:space-y-8;
+  }
+
+  /* Watchlist Components */
+  .watchlist-btn {
+    @apply bg-primary text-sm hover:bg-primary/80 text-white w-full rounded-lg h-10 font-medium cursor-pointer transition-all duration-200;
+  }
+  .watchlist-remove {
+    @apply bg-destructive hover:bg-red-700 text-white;
+  }
+  .watchlist-empty-container {
+    @apply container gap-8 flex-col items-center md:mt-10 p-6 text-center;
+  }
+  .watchlist-empty {
+    @apply flex flex-col items-center justify-center text-center;
+  }
+  .watchlist-star {
+    @apply h-16 w-16 text-muted-foreground mb-4;
+  }
+  .empty-title {
+    @apply text-xl font-semibold text-foreground mb-2;
+  }
+  .empty-description {
+    @apply text-muted-foreground mb-6 max-w-md;
+  }
+  .watchlist-container {
+    @apply flex flex-col-reverse lg:grid lg:grid-cols-3 gap-8;
+  }
+  .watchlist {
+    @apply lg:col-span-2 space-y-8;
+  }
+  .watchlist-alerts {
+    @apply items-start gap-6 h-full flex-col w-full lg:col-span-1;
+  }
+  .watchlist-icon-btn {
+    @apply w-fit cursor-pointer hover:bg-transparent! text-muted-foreground hover:text-primary transition-colors;
+  }
+  .watchlist-icon-added {
+    @apply !text-primary hover:!text-blue-700;
+  }
+  .watchlist-icon {
+    @apply w-8 h-8 rounded-full flex items-center justify-center bg-muted;
+  }
+  .trash-icon {
+    @apply h-4 w-4 text-muted-foreground hover:text-red-600 transition-colors;
+  }
+  .star-icon {
+    @apply h-4 w-4;
+  }
+  .watchlist-title {
+    @apply text-xl md:text-2xl font-semibold text-foreground;
+  }
+  .watchlist-table {
+    @apply !relative overflow-hidden !w-full bg-card border !border-border !rounded-lg shadow-sm;
+  }
+  .table-header-row {
+    @apply text-muted-foreground font-medium bg-muted/50 border-b border-border hover:bg-muted/50;
+  }
+  .table-header:first-child {
+    @apply pl-4;
+  }
+  .table-row {
+    @apply border-b cursor-pointer text-foreground border-border hover:bg-accent/50 transition-colors;
+  }
+  .table-cell {
+    @apply font-medium text-sm
+  }
+  .add-alert {
+    @apply flex text-sm items-center whitespace-nowrap gap-1.5 px-3 w-fit py-2 text-primary border border-primary/20 rounded-lg font-medium bg-transparent hover:bg-primary/5 cursor-pointer transition-colors;
+  }
+
+  /* News Components */
+  .watchlist-news {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+  .news-item {
+    @apply bg-card rounded-xl border w-full border-border p-5 duration-200 hover:border-primary/40 hover:shadow-md cursor-pointer transition-all;
+  }
+  .news-tag {
+    @apply inline-block w-fit px-2.5 py-1 mb-4 rounded-md bg-accent text-accent-foreground text-xs font-medium uppercase tracking-wide;
+  }
+  .news-title {
+    @apply text-lg font-semibold text-foreground leading-tight mb-3 line-clamp-2;
+  }
+  .news-meta {
+    @apply flex items-center text-sm text-muted-foreground mb-2;
+  }
+  .news-summary {
+    @apply text-muted-foreground flex-1 text-sm leading-relaxed mb-3 line-clamp-3;
+  }
+  .news-cta {
+    @apply text-sm align-bottom text-primary hover:text-blue-700 font-medium transition-colors;
+  }
+
+  /* Alert Components */
+  .alert-dialog {
+    @apply bg-card border-border text-foreground max-w-md;
+  }
+  .alert-title {
+    @apply text-xl font-semibold text-foreground;
+  }
+  .alert-list {
+    @apply overflow-y-auto w-full max-h-[911px] rounded-lg flex border border-border flex-col gap-4 bg-card p-3 flex-1;
+  }
+  .alert-empty {
+    @apply px-6 py-8 text-center text-muted-foreground/50;
+  }
+  .alert-item {
+    @apply p-4 rounded-lg bg-muted/30 border border-border hover:border-primary/40 transition-colors;
+  }
+  .alert-name {
+    @apply mb-2 text-lg text-primary font-semibold;
+  }
+  .alert-details {
+    @apply flex border-b border-border pb-3 items-center justify-between gap-3 mb-2;
+  }
+  .alert-company {
+    @apply text-muted-foreground text-sm;
+  }
+  .alert-price {
+    @apply text-foreground font-bold text-base;
+  }
+  .alert-actions {
+    @apply flex items-end justify-between;
+  }
+  .alert-update-btn {
+    @apply text-muted-foreground rounded-full bg-transparent hover:bg-green-500/10 hover:text-green-600 cursor-pointer transition-all;
+  }
+  .alert-delete-btn {
+    @apply text-muted-foreground rounded-full hover:bg-red-500/10 hover:text-red-600 bg-transparent cursor-pointer transition-all;
+  }
+
+  /* Stat Cards - New Component */
+  .stat-card {
+    @apply bg-card border border-border rounded-lg p-4 hover:shadow-md transition-shadow;
+  }
+  .stat-label {
+    @apply text-sm text-muted-foreground font-medium mb-1;
+  }
+  .stat-value {
+    @apply text-2xl font-bold text-foreground;
+  }
+  .stat-change {
+    @apply text-sm font-medium mt-1;
+  }
+  .stat-change-positive {
+    @apply text-green-600;
+  }
+  .stat-change-negative {
+    @apply text-red-600;
+  }
+}
+
+/* Market News Component Styles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* TradingView Advanced Chart Widget Styles */
+.tradingview-widget-container {
+  position: relative;
+  background-color: transparent !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.tv-embed-widget-wrapper__body {
+  background-color: transparent !important;
+}
+
+.tradingview-widget-container__widget {
+  background-color: transparent !important;
+  height: 100% !important;
+}
+
+.widget-stock-heatmap-container .screenerMapWrapper-BBVfGP0b {
+  overflow: hidden !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.canvasContainer-tyaAU8aH {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.tv-site-widget--bg_none {
+  background-color: transparent !important;
+}
+
+.tradingview-widget-copyright {
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 4px 0;
+  background-color: transparent;
+}
+
+.tradingview-widget-copyright a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tradingview-widget-copyright a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.tv-embed-widget-wrapper .tv-embed-widget-wrapper__body {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.tradingview-widget-container iframe {
+  background-color: transparent !important;
+  width: 100% !important;
+}
+
+.custom-chart.tradingview-widget-container iframe {
+  border: 1px solid var(--border);
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+/* Custom scrollbar that shows on hover */
+.scrollbar-hide-default {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-hide-default::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-hide-default::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-hide-default::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.scrollbar-hide-default:hover {
+  scrollbar-color: var(--muted) transparent;
+}
+
+.scrollbar-hide-default:hover::-webkit-scrollbar-thumb {
+  background-color: var(--muted);
+}
+
+.scrollbar-hide-default::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted-foreground);
+}
+
+.dark {
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
