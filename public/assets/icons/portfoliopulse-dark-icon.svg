@@ -1,0 +1,12 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark rounded square background -->
+  <rect width="48" height="48" rx="10" fill="#1E293B"/>
+  <rect width="48" height="48" rx="10" stroke="#2D3C50" stroke-width="1"/>
+  
+  <!-- Pulse/heartbeat line -->
+  <path d="M10 24h7l4-10 5 18 4-12 3 4h8" stroke="#3B82F6" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Dot at the end -->
+  <circle cx="38" cy="24" r="2" fill="#3B82F6"/>
+</svg>
+

@@ -1,0 +1,19 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Icon - Pulse/Graph motif -->
+  <g id="logo-icon">
+    <rect x="2" y="2" width="44" height="44" rx="12" fill="#0066FF"/>
+    <path d="M12 28 L18 22 L22 26 L28 18 L34 24 L38 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="38" cy="20" r="2" fill="white"/>
+  </g>
+  
+  <!-- Logo Text -->
+  <g id="logo-text">
+    <text x="56" y="20" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">
+      Portfolio
+    </text>
+    <text x="56" y="36" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#0066FF">
+      Pulse
+    </text>
+  </g>
+</svg>
+

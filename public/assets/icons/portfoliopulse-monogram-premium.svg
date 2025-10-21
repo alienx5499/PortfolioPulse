@@ -1,0 +1,30 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="monogramBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="48" height="48" rx="12" fill="url(#monogramBg)"/>
+  
+  <!-- Stylized PP monogram with pulse integration -->
+  <g transform="translate(12, 12)">
+    <!-- First P -->
+    <path d="M2 24V4C2 2.89543 2.89543 2 4 2H12C15.3137 2 18 4.68629 18 8C18 11.3137 15.3137 14 12 14H4V24" 
+          stroke="white" 
+          stroke-width="2.5" 
+          stroke-linecap="round" 
+          fill="none"/>
+    
+    <!-- Second P overlapping -->
+    <path d="M10 24V12C10 10.8954 10.8954 10 12 10H16C18.7614 10 21 12.2386 21 15C21 17.7614 18.7614 20 16 20H12V24" 
+          stroke="#10B981" 
+          stroke-width="2.5" 
+          stroke-linecap="round" 
+          fill="none" 
+          opacity="0.9"/>
+  </g>
+</svg>
+

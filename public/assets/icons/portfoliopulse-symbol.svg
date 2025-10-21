@@ -1,0 +1,11 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimal geometric P with pulse integration -->
+  <rect width="48" height="48" rx="10" fill="#3B82F6"/>
+  
+  <!-- Stylized P with pulse wave -->
+  <path d="M14 12v24M14 14h8a6 6 0 110 12h-8" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Pulse line overlay -->
+  <path d="M24 32h10l2-4 2 8" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+</svg>
+

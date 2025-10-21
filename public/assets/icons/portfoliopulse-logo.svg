@@ -1,0 +1,15 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: Geometric P with pulse line -->
+  <rect x="0" y="0" width="48" height="48" rx="8" fill="#11224E"/>
+  
+  <!-- Stylized P -->
+  <path d="M12 12 H28 C30.2091 12 32 13.7909 32 16 V20 C32 22.2091 30.2091 24 28 24 H20 V36 H12 V12 Z M20 16 V20 H28 V16 H20 Z" fill="#F87B1B"/>
+  
+  <!-- Pulse line -->
+  <path d="M14 28 L20 24 L26 28 L32 20 L38 24" stroke="#CBD99B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Text: PortfolioPulse -->
+  <text x="60" y="32" font-family="Inter, sans-serif" font-weight="700" font-size="24" fill="#EEEEEE">
+    PortfolioPulse
+  </text>
+</svg>
