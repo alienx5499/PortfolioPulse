@@ -45,8 +45,8 @@ export const sendNewsSummaryEmail = async (
 
 export const sendPasswordResetEmail = async ({ email, name, resetUrl }: { email: string; name: string; resetUrl: string }) => {
     const htmlTemplate = PASSWORD_RESET_EMAIL_TEMPLATE
-        .replace('{{userName}}', name)
-        .replace('{{resetUrl}}', resetUrl);
+        .replace(/{{userName}}/g, name)
+        .replace(/{{resetUrl}}/g, resetUrl);
 
     const mailOptions = {
         from: `"PortfolioPulse Security" <security@portfoliopulse.app>`,
