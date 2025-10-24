@@ -122,3 +122,4 @@ const ForgotPasswordOTP = () => {
 };
 
 export default ForgotPasswordOTP;
+

@@ -131,11 +131,11 @@ export const resetPasswordWithOTP = async ({
 };
 
 // Clean up expired OTPs (call this periodically)
-export const cleanupExpiredOTPs = () => {
-  const now = new Date();
-  for (const [email, otpData] of otpStore.entries()) {
-    if (now > otpData.expiresAt) {
-      otpStore.delete(email);
+export const cleanupExpiredOTPs = async () => {
+    const now = new Date();
+    for (const [email, otpData] of otpStore.entries()) {
+        if (now > otpData.expiresAt) {
+            otpStore.delete(email);
+        }
     }
-  }
 };
