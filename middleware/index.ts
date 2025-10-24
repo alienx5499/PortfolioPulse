@@ -7,8 +7,19 @@ export async function middleware(request: NextRequest) {
 
     // If user is not authenticated and trying to access protected routes
     if (!sessionCookie) {
-        // Redirect to sign-in instead of home page to avoid loops
-        if (pathname !== '/sign-in' && pathname !== '/sign-up' && pathname !== '/forgot-password' && pathname !== '/reset-password') {
+        // Allow access to auth pages and verification pages
+        const allowedPaths = [
+            '/sign-in', 
+            '/sign-up', 
+            '/forgot-password', 
+            '/reset-password',
+            '/forgot-password-otp',
+            '/verify-otp',
+            '/verify-email',
+            '/verify-email-pending'
+        ];
+        
+        if (!allowedPaths.includes(pathname)) {
             return NextResponse.redirect(new URL("/sign-in", request.url));
         }
     }
