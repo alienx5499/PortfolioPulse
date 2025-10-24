@@ -34,9 +34,37 @@ export const getAuth = async () => {
             },
         },
         plugins: [nextCookies()],
+        // Add custom pages configuration
+        pages: {
+            resetPassword: "/reset-password"
+        }
     });
 
     return authInstance;
 }
 
-export const auth = await getAuth();
+// Initialize auth with error handling
+let auth: ReturnType<typeof betterAuth>;
+
+try {
+    auth = await getAuth();
+} catch (error) {
+    console.error('Failed to initialize Better Auth:', error);
+    // Create a minimal auth instance for fallback
+    auth = betterAuth({
+        database: null as any,
+        secret: process.env.BETTER_AUTH_SECRET || 'fallback-secret',
+        baseURL: process.env.BETTER_AUTH_URL || 'http://localhost:3000',
+        emailAndPassword: {
+            enabled: true,
+            disableSignUp: false,
+            requireEmailVerification: false,
+            minPasswordLength: 8,
+            maxPasswordLength: 128,
+            autoSignIn: true,
+        },
+        plugins: [nextCookies()],
+    });
+}
+
+export { auth };
