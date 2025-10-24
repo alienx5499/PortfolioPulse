@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import InputField from '@/components/forms/InputField';
 import FooterLink from '@/components/forms/FooterLink';
-import { generateOTP } from '@/lib/actions/otp.actions';
 import { toast } from 'sonner';
 import { useState } from 'react';
 
@@ -27,7 +26,19 @@ const ForgotPasswordOTP = () => {
     const onSubmit = async (data: { email: string }) => {
         setMessage('');
         try {
-            const result = await generateOTP(data);
+            const response = await fetch('/api/test-otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: 'generate',
+                    email: data.email
+                })
+            });
+            
+            const result = await response.json();
+            
             if (result.success) {
                 setEmail(data.email);
                 setOtpSent(true);
@@ -67,7 +78,10 @@ const ForgotPasswordOTP = () => {
                 
                 <div className="space-y-4">
                     <Button 
-                        onClick={() => window.location.href = '/verify-otp'} 
+                        onClick={() => {
+                            localStorage.setItem('otp-email', email);
+                            window.location.href = `/verify-otp?email=${encodeURIComponent(email)}`;
+                        }} 
                         className="primary-btn w-full"
                     >
                         Enter OTP Code

@@ -10,14 +10,20 @@ import FooterLink from "@/components/forms/FooterLink";
 import {signUpWithEmail} from "@/lib/actions/auth.actions";
 import {useRouter} from "next/navigation";
 import {toast} from "sonner";
+import {useState, useEffect} from "react";
+import PasswordStrengthIndicator from "@/components/PasswordStrengthIndicator";
+import {validatePassword} from "@/lib/utils/password-validation";
 
 const SignUp = () => {
     const router = useRouter()
+    const [password, setPassword] = useState('');
+    
     const {
         register,
         handleSubmit,
         control,
         formState: { errors, isSubmitting },
+        watch,
     } = useForm<SignUpFormData>({
         defaultValues: {
             fullName: '',
@@ -31,7 +37,24 @@ const SignUp = () => {
         mode: 'onBlur'
     }, );
 
+    // Watch password field for strength indicator
+    const watchedPassword = watch('password');
+    
+    // Update password state when form password changes
+    useEffect(() => {
+        setPassword(watchedPassword || '');
+    }, [watchedPassword]);
+
     const onSubmit = async (data: SignUpFormData) => {
+        // Validate password strength
+        const passwordValidation = validatePassword(data.password);
+        if (!passwordValidation.isValid) {
+            toast.error('Password does not meet requirements', {
+                description: passwordValidation.errors.join(', ')
+            });
+            return;
+        }
+
         try {
             const result = await signUpWithEmail(data);
             if(result.success) {
@@ -83,6 +106,13 @@ const SignUp = () => {
                     error={errors.password}
                     validation={{ required: 'Password is required', minLength: 8 }}
                 />
+                
+                {/* Password Strength Indicator */}
+                {password && (
+                    <div className="mt-2">
+                        <PasswordStrengthIndicator password={password} />
+                    </div>
+                )}
 
                 <CountrySelectField
                     name="country"

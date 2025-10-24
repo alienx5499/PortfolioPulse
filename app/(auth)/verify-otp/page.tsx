@@ -4,10 +4,11 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import InputField from '@/components/forms/InputField';
 import FooterLink from '@/components/forms/FooterLink';
-import { verifyOTP, resetPasswordWithOTP } from '@/lib/actions/otp.actions';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import PasswordStrengthIndicator from '@/components/PasswordStrengthIndicator';
+import { validatePassword } from '@/lib/utils/password-validation';
 
 const VerifyOTP = () => {
     const router = useRouter();
@@ -15,11 +16,30 @@ const VerifyOTP = () => {
     const [step, setStep] = useState<'verify' | 'reset'>('verify');
     const [email, setEmail] = useState('');
     const [otp, setOtp] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    
+    // Get email from URL params or localStorage
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const emailParam = urlParams.get('email');
+        const storedEmail = localStorage.getItem('otp-email');
+        
+        if (emailParam) {
+            setEmail(emailParam);
+            localStorage.setItem('otp-email', emailParam);
+        } else if (storedEmail) {
+            setEmail(storedEmail);
+        } else {
+            // No email found, redirect to forgot password
+            router.push('/forgot-password-otp');
+        }
+    }, [router]);
     
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
+        setValue,
     } = useForm<{ email: string; otp: string; newPassword: string; confirmPassword: string }>({
         defaultValues: {
             email: '',
@@ -30,10 +50,32 @@ const VerifyOTP = () => {
         mode: 'onBlur',
     });
 
+    // Update form when email is set
+    useEffect(() => {
+        if (email) {
+            setValue('email', email);
+        }
+    }, [email, setValue]);
+
     const onVerifyOTP = async (data: { email: string; otp: string }) => {
         setMessage('');
         try {
-            const result = await verifyOTP(data);
+            console.log('Verifying OTP with data:', data);
+            console.log('Email:', data.email, 'OTP:', data.otp);
+            
+            const response = await fetch('/api/verify-otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: data.email,
+                    otp: data.otp
+                })
+            });
+            
+            const result = await response.json();
+            
             if (result.success) {
                 setEmail(data.email);
                 setOtp(data.otp);
@@ -60,6 +102,16 @@ const VerifyOTP = () => {
     const onResetPassword = async (data: { email: string; otp: string; newPassword: string; confirmPassword: string }) => {
         setMessage('');
         
+        // Validate password strength
+        const passwordValidation = validatePassword(data.newPassword);
+        if (!passwordValidation.isValid) {
+            setMessage('Password does not meet requirements: ' + passwordValidation.errors.join(', '));
+            toast.error('Password does not meet requirements', {
+                description: passwordValidation.errors.join(', ')
+            });
+            return;
+        }
+        
         if (data.newPassword !== data.confirmPassword) {
             setMessage('Passwords do not match.');
             toast.error('Passwords mismatch', { description: 'Please ensure both passwords are the same.' });
@@ -67,11 +119,19 @@ const VerifyOTP = () => {
         }
 
         try {
-            const result = await resetPasswordWithOTP({
-                email: data.email,
-                otp: data.otp,
-                newPassword: data.newPassword
+            const response = await fetch('/api/reset-password-otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: data.email,
+                    otp: data.otp,
+                    newPassword: data.newPassword
+                })
             });
+            
+            const result = await response.json();
             
             if (result.success) {
                 setMessage('Password reset successfully! Redirecting to sign in...');
@@ -116,7 +176,15 @@ const VerifyOTP = () => {
                         register={register}
                         error={errors.newPassword}
                         validation={{ required: 'New password is required', minLength: 8 }}
+                        onChange={(e) => setNewPassword(e.target.value)}
                     />
+                    
+                    {/* Password Strength Indicator */}
+                    {newPassword && (
+                        <div className="mt-2">
+                            <PasswordStrengthIndicator password={newPassword} />
+                        </div>
+                    )}
 
                     <InputField
                         name="confirmPassword"
@@ -159,14 +227,14 @@ const VerifyOTP = () => {
             </p>
 
             <form onSubmit={handleSubmit(onVerifyOTP)} className="space-y-5">
-                <InputField
-                    name="email"
-                    label="Email Address"
-                    placeholder="user@portfoliopulse.app"
-                    register={register}
-                    error={errors.email}
-                    validation={{ required: 'Email is required', pattern: /^\w+@\w+\.\w+$/ }}
-                />
+                {/* Hidden email field */}
+                <input type="hidden" {...register('email')} value={email} />
+                
+                <div className="text-center mb-4">
+                    <p className="text-sm text-muted-foreground">
+                        Enter the 6-digit OTP code sent to <strong>{email}</strong>
+                    </p>
+                </div>
 
                 <InputField
                     name="otp"
