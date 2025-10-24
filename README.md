@@ -4,20 +4,21 @@
 
 ### _Professional Market Analytics & Portfolio Tracking Platform_
 
-[![Build Passing](https://img.shields.io/badge/build-passing-success?style=flat-square)](https://github.com/your-username/PortfolioPulse/actions)
+[![Build Passing](https://img.shields.io/badge/build-passing-success?style=flat-square)](https://github.com/alienx5499/PortfolioPulse/actions)
 [![Node.js](https://img.shields.io/badge/Node.js-v18.0.0-green?style=flat-square)](https://nodejs.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-15.0.0-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/your-username/PortfolioPulse/blob/main/CONTRIBUTING.md)
-[![License: MIT](https://custom-icon-badges.herokuapp.com/github/license/your-username/PortfolioPulse?logo=law&logoColor=white)](https://github.com/your-username/PortfolioPulse/blob/main/LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16.0.0-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.0-blue?style=flat-square&logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/alienx5499/PortfolioPulse/blob/main/CONTRIBUTING.md)
+[![License: MIT](https://custom-icon-badges.herokuapp.com/github/license/alienx5499/PortfolioPulse?logo=law&logoColor=white)](https://github.com/alienx5499/PortfolioPulse/blob/main/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Web-brightgreen?style=flat-square)](https://portfoliopulse.vercel.app/)
-[![Views](https://visitor-badge.laobi.icu/badge?page_id=your-username.portfoliopulse)](https://visitor-badge.laobi.icu/badge?page_id=your-username.portfoliopulse)
-[![⭐ GitHub stars](https://img.shields.io/github/stars/your-username/PortfolioPulse?style=social)](https://github.com/your-username/PortfolioPulse/stargazers)
-[![🍴 GitHub forks](https://img.shields.io/github/forks/your-username/PortfolioPulse?style=social)](https://github.com/your-username/PortfolioPulse/network)
-[![Commits](https://badgen.net/github/commits/your-username/PortfolioPulse)](https://github.com/your-username/PortfolioPulse/commits/main)
-[![🐛 GitHub issues](https://img.shields.io/github/issues/your-username/PortfolioPulse)](https://github.com/your-username/PortfolioPulse/issues)
-[![📂 GitHub pull requests](https://img.shields.io/github/issues-pr/your-username/PortfolioPulse)](https://github.com/your-username/PortfolioPulse/pulls)
-[![💾 GitHub code size](https://img.shields.io/github/languages/code-size/your-username/PortfolioPulse)](https://github.com/your-username/PortfolioPulse)
+[![Views](https://visitor-badge.laobi.icu/badge?page_id=alienx5499.portfoliopulse)](https://visitor-badge.laobi.icu/badge?page_id=alienx5499.portfoliopulse)
+[![⭐ GitHub stars](https://img.shields.io/github/stars/alienx5499/PortfolioPulse?style=social)](https://github.com/alienx5499/PortfolioPulse/stargazers)
+[![🍴 GitHub forks](https://img.shields.io/github/forks/alienx5499/PortfolioPulse?style=social)](https://github.com/alienx5499/PortfolioPulse/network)
+[![Commits](https://badgen.net/github/commits/alienx5499/PortfolioPulse)](https://github.com/alienx5499/PortfolioPulse/commits/main)
+[![🐛 GitHub issues](https://img.shields.io/github/issues/alienx5499/PortfolioPulse)](https://github.com/alienx5499/PortfolioPulse/issues)
+[![📂 GitHub pull requests](https://img.shields.io/github/issues-pr/alienx5499/PortfolioPulse)](https://github.com/alienx5499/PortfolioPulse/pulls)
+[![💾 GitHub code size](https://img.shields.io/github/languages/code-size/alienx5499/PortfolioPulse)](https://github.com/alienx5499/PortfolioPulse)
 
 </div>
 
@@ -25,7 +26,7 @@
 
 ## 🎯 **What is PortfolioPulse?**
 
-PortfolioPulse is a professional-grade portfolio tracking and market analytics platform built with Next.js 15, React 19, and modern web technologies. Track real-time market data, manage your portfolio with advanced analytics, explore cryptocurrency markets, and get AI-powered insights. Features include professional fintech design, real-time alerts, and comprehensive market analysis tools—perfect for modern traders and investors.
+PortfolioPulse is a professional-grade portfolio tracking and market analytics platform built with Next.js 16, React 19, and modern web technologies. Track real-time market data, manage your portfolio with advanced analytics, explore cryptocurrency markets, and get AI-powered insights. Features include professional fintech design, real-time alerts, and comprehensive market analysis tools—perfect for modern traders and investors.
 
 ### 🌟 **Key Features**
 
@@ -46,11 +47,11 @@ PortfolioPulse is a professional-grade portfolio tracking and market analytics p
 **Love professional fintech tools? You're exactly who we built this for!** ✨
 _Help other traders and investors discover what you just experienced_ 💝
 
-<a href="https://github.com/your-username/PortfolioPulse">
+<a href="https://github.com/alienx5499/PortfolioPulse">
   <img src="https://img.shields.io/badge/⭐%20Star%20this%20repo-Be%20part%20of%20our%20community!-yellow?style=for-the-badge&logo=github" alt="Star this repo" />
 </a>
 
-<a href="https://twitter.com/intent/tweet?text=🔥%20WOW!%20PortfolioPulse%20is%20the%20professional%20portfolio%20tracker%20I%20needed!%20Clean%20design,%20real-time%20data,%20and%20AI%20insights%20🧠✨%0AIf%20you're%20into%20trading,%20investing,%20or%20just%20want%20to%20track%20your%20portfolio%20professionally%20-%20you%20NEED%20this!%20%F0%9F%9A%80%0Ahttps://github.com/your-username/PortfolioPulse%0A@your-username">
+<a href="https://twitter.com/intent/tweet?text=🔥%20WOW!%20PortfolioPulse%20is%20the%20professional%20portfolio%20tracker%20I%20needed!%20Clean%20design,%20real-time%20data,%20and%20AI%20insights%20🧠✨%0AIf%20you're%20into%20trading,%20investing,%20or%20just%20want%20to%20track%20your%20portfolio%20professionally%20-%20you%20NEED%20this!%20%F0%9F%9A%80%0Ahttps://github.com/alienx5499/PortfolioPulse%0A@alienx5499">
   <img src="https://img.shields.io/badge/🐦%20Share%20the%20love-Help%20a%20fellow%20trader!-1DA1F2?style=for-the-badge&logo=twitter" alt="Tweet about PortfolioPulse" />
 </a>
 
@@ -58,7 +59,7 @@ _Help other traders and investors discover what you just experienced_ 💝
   <img src="https://img.shields.io/badge/🎮%20Experience%20the%20Magic-Try%20it%20NOW!-brightgreen?style=for-the-badge&logo=vercel" alt="Try PortfolioPulse Live" />
 </a>
 
-<a href="https://portfoliopulse.vercel.app/contributions">
+<a href="https://github.com/alienx5499/PortfolioPulse/contributors">
   <img src="https://img.shields.io/badge/🌟%20Meet%20Our%20Heroes-View%20Contributors-purple?style=for-the-badge&logo=github" alt="View Contributors" />
 </a>
 
@@ -125,7 +126,7 @@ _Help other traders and investors discover what you just experienced_ 💝
 
 ### 🌐 **Frontend Technologies**
 
-- **Framework**: Next.js 15 with React 19
+- **Framework**: Next.js 16 with React 19
 - **Styling**: Tailwind CSS with custom design system
 - **UI Components**: Shadcn/ui with custom components
 - **Icons**: Lucide React
@@ -333,7 +334,7 @@ PortfolioPulse/
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/PortfolioPulse.git
+   git clone https://github.com/alienx5499/PortfolioPulse.git
    ```
 
 2. **Navigate to Project Directory**
@@ -448,7 +449,7 @@ We ❤️ open source! Your contributions make this project better.
 1. **Fork the Repository**
 
    ```bash
-   git clone https://github.com/your-username/PortfolioPulse.git
+   git clone https://github.com/alienx5499/PortfolioPulse.git
    ```
 
 2. **Create Feature Branch**
@@ -485,8 +486,8 @@ We ❤️ open source! Your contributions make this project better.
 <div align="center">
 	<h3>Thank you for contributing to our repository</h3><br>
 	<p align="center">
-		<a href="https://github.com/your-username/PortfolioPulse/contributors">
-			<img src="https://contrib.rocks/image?repo=your-username/PortfolioPulse" width="720" height="380" />
+		<a href="https://github.com/alienx5499/PortfolioPulse/contributors">
+			<img src="https://contrib.rocks/image?repo=alienx5499/PortfolioPulse" width="720" height="380" />
 		</a>
 	</p>
 </div>
@@ -503,7 +504,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### 📬 **Feedback & Suggestions**
 
-_We value your input! Share your thoughts through [GitHub Issues](https://github.com/your-username/PortfolioPulse/issues)._
+_We value your input! Share your thoughts through [GitHub Issues](https://github.com/alienx5499/PortfolioPulse/issues)._
 
 💡 _Let's work together to enhance professional portfolio tracking!_
 
