@@ -58,9 +58,11 @@ const SignUp = () => {
         try {
             const result = await signUpWithEmail(data);
             if(result.success) {
-                toast.success('Account created successfully!');
-                // Use Next.js router for navigation
-                router.push('/');
+                toast.success('Account created! Please check your email to verify your account.', {
+                    description: 'We\'ve sent a verification link to your email address.'
+                });
+                // Redirect to verification pending page
+                router.push('/verify-email-pending?email=' + encodeURIComponent(data.email));
             } else {
                 toast.error('Sign up failed', {
                     description: result.error || 'Failed to create account'

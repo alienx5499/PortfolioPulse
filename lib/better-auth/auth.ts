@@ -23,20 +23,26 @@ export const getAuth = async () => {
         emailAndPassword: {
             enabled: true,
             disableSignUp: false,
-            requireEmailVerification: false,
+            requireEmailVerification: true,
             minPasswordLength: 8,
             maxPasswordLength: 128,
-            autoSignIn: true,
+            autoSignIn: false,
             sendResetPassword: async ({ user, url }) => {
                 // Send password reset email
                 const { sendPasswordResetEmail } = await import('@/lib/nodemailer');
                 await sendPasswordResetEmail({ email: user.email, name: user.name, resetUrl: url });
             },
+            sendVerificationEmail: async ({ user, url }) => {
+                // Send email verification email
+                const { sendVerificationEmail } = await import('@/lib/nodemailer');
+                await sendVerificationEmail({ email: user.email, name: user.name, verificationUrl: url });
+            },
         },
         plugins: [nextCookies()],
         // Add custom pages configuration
         pages: {
-            resetPassword: "/reset-password"
+            resetPassword: "/reset-password",
+            verifyEmail: "/verify-email"
         }
     });
 
@@ -58,10 +64,10 @@ try {
         emailAndPassword: {
             enabled: true,
             disableSignUp: false,
-            requireEmailVerification: false,
+            requireEmailVerification: true,
             minPasswordLength: 8,
             maxPasswordLength: 128,
-            autoSignIn: true,
+            autoSignIn: false,
         },
         plugins: [nextCookies()],
     });

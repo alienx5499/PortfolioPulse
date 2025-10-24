@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import {WELCOME_EMAIL_TEMPLATE, NEWS_SUMMARY_EMAIL_TEMPLATE, PASSWORD_RESET_EMAIL_TEMPLATE, OTP_EMAIL_TEMPLATE} from "@/lib/nodemailer/templates";
+import {WELCOME_EMAIL_TEMPLATE, NEWS_SUMMARY_EMAIL_TEMPLATE, PASSWORD_RESET_EMAIL_TEMPLATE, OTP_EMAIL_TEMPLATE, VERIFICATION_EMAIL_TEMPLATE} from "@/lib/nodemailer/templates";
 
 export const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -68,6 +68,21 @@ export const sendOTPEmail = async ({ email, otp }: { email: string; otp: string 
         to: email,
         subject: `🔐 Your PortfolioPulse OTP Code`,
         text: `Your OTP code is: ${otp}. This code will expire in 10 minutes.`,
+        html: htmlTemplate,
+    };
+
+    await transporter.sendMail(mailOptions);
+};
+
+export const sendVerificationEmail = async ({ email, name, verificationUrl }: { email: string; name: string; verificationUrl: string }) => {
+    const htmlTemplate = VERIFICATION_EMAIL_TEMPLATE
+        .replace(/{{verificationUrl}}/g, verificationUrl);
+
+    const mailOptions = {
+        from: `"PortfolioPulse" <noreply@portfoliopulse.app>`,
+        to: email,
+        subject: `✅ Verify Your PortfolioPulse Account`,
+        text: `Please verify your email address by clicking this link: ${verificationUrl}`,
         html: htmlTemplate,
     };
 
