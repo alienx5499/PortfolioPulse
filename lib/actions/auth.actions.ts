@@ -27,6 +27,8 @@ export const signUpWithEmail = async ({ email, password, fullName, country, inve
                 // Don't fail the signup if email fails
             }
 
+            // Better Auth will automatically send verification email when requireEmailVerification: true
+
             // Also try Inngest for production
             try {
                 await inngest.send({

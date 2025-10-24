@@ -23,7 +23,7 @@ export const getAuth = async () => {
         emailAndPassword: {
             enabled: true,
             disableSignUp: false,
-            requireEmailVerification: true,
+            requireEmailVerification: true, // Enforce email verification
             minPasswordLength: 8,
             maxPasswordLength: 128,
             autoSignIn: false,
@@ -64,7 +64,7 @@ try {
         emailAndPassword: {
             enabled: true,
             disableSignUp: false,
-            requireEmailVerification: true,
+            requireEmailVerification: true, // Enforce email verification
             minPasswordLength: 8,
             maxPasswordLength: 128,
             autoSignIn: false,
