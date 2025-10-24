@@ -722,6 +722,138 @@ export const STOCK_ALERT_LOWER_EMAIL_TEMPLATE = `<!DOCTYPE html>
 </body>
 </html>`;
 
+export const OTP_EMAIL_TEMPLATE = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Your PortfolioPulse OTP</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style type="text/css">
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            .email-container {
+                background-color: #141414 !important;
+                border: 1px solid #30333A !important;
+            }
+            .dark-bg {
+                background-color: #050505 !important;
+            }
+            .dark-text {
+                color: #ffffff !important;
+            }
+            .dark-text-secondary {
+                color: #9ca3af !important;
+            }
+            .dark-text-muted {
+                color: #6b7280 !important;
+            }
+            .dark-border {
+                border-color: #30333A !important;
+            }
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            .mobile-padding {
+                padding: 24px !important;
+            }
+            .mobile-text {
+                font-size: 16px !important;
+                line-height: 24px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <div style="width: 100%; background-color: #f8fafc; padding: 20px 0;">
+        <div class="email-container" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); overflow: hidden; border: 1px solid #e5e7eb;">
+            
+            <!-- Header -->
+            <div class="dark-bg" style="background: linear-gradient(135deg, #11224E 0%, #1A2B5C 100%); padding: 32px 24px; text-align: center;">
+                <img src="/assets/icons/portfoliopulse-dark-logo.svg" alt="PortfolioPulse" style="height: 48px; margin-bottom: 16px;">
+                <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; margin: 0; letter-spacing: -0.025em;">Your OTP Code</h1>
+                <p class="dark-text-secondary" style="color: #cbd5e1; font-size: 16px; margin: 8px 0 0 0; font-weight: 400;">Secure password reset</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="mobile-padding" style="padding: 40px 32px;">
+                <div style="text-align: center; margin-bottom: 32px;">
+                    <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #F87B1B 0%, #ff8c42 100%); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 7C13.1 7 14 7.9 14 9S13.1 11 12 11 10 10.1 10 9 10.9 7 12 7ZM18 11.1C18 11.03 18 10.97 18 10.9V6.3L12 3.19L6 6.3V10.9C6 10.97 6 11.03 6 11.1C6 14.1 7.9 16.7 10.5 17.8L12 18.5L13.5 17.8C16.1 16.7 18 14.1 18 11.1Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h2 class="dark-text" style="color: #1f2937; font-size: 24px; font-weight: 600; margin: 0 0 16px 0;">Your OTP Code</h2>
+                    <p class="dark-text-secondary mobile-text" style="color: #6b7280; font-size: 16px; line-height: 24px; margin: 0;">Use this code to reset your PortfolioPulse password.</p>
+                </div>
+
+                <!-- OTP Code -->
+                <div style="text-align: center; margin: 32px 0;">
+                    <div style="display: inline-block; background: linear-gradient(135deg, #F87B1B 0%, #ff8c42 100%); color: #ffffff; padding: 20px 40px; border-radius: 12px; font-size: 32px; font-weight: 700; letter-spacing: 8px; box-shadow: 0 4px 6px -1px rgba(248, 123, 27, 0.3);">
+                        {{otp}}
+                    </div>
+                </div>
+
+                <!-- Security Notice -->
+                <div style="background-color: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 16px; margin: 24px 0;">
+                    <div style="display: flex; align-items: flex-start;">
+                        <div style="margin-right: 12px; margin-top: 2px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9V13M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="color: #92400e; font-size: 14px; font-weight: 600; margin: 0 0 4px 0;">Security Notice</h3>
+                            <p style="color: #92400e; font-size: 14px; line-height: 20px; margin: 0;">This OTP will expire in 10 minutes. Do not share this code with anyone.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div style="border-top: 1px solid #e5e7eb; padding-top: 24px; margin-top: 32px;">
+                    <p class="dark-text-muted mobile-text" style="color: #6b7280; font-size: 14px; line-height: 20px; margin: 0 0 16px 0;">
+                        If you didn't request this OTP, please ignore this email. Your account remains secure.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div style="background-color: #f8fafc; padding: 24px 32px; border-top: 1px solid #e5e7eb;">
+                <div style="text-align: center;">
+                    <p class="dark-text-muted" style="color: #6b7280; font-size: 14px; margin: 0 0 16px 0;">
+                        Need help? Contact our support team at 
+                        <a href="mailto:support@portfoliopulse.com" style="color: #3b82f6; text-decoration: none;">support@portfoliopulse.com</a>
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 24px; margin-top: 16px;">
+                        <a href="#" style="color: #6b7280; text-decoration: none; font-size: 14px;">Privacy Policy</a>
+                        <a href="#" style="color: #6b7280; text-decoration: none; font-size: 14px;">Terms of Service</a>
+                        <a href="#" style="color: #6b7280; text-decoration: none; font-size: 14px;">Unsubscribe</a>
+                    </div>
+                    <p class="dark-text-muted" style="color: #9ca3af; font-size: 12px; margin: 16px 0 0 0;">
+                        © 2024 PortfolioPulse. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>`;
+
 export const PASSWORD_RESET_EMAIL_TEMPLATE = `<!DOCTYPE html>
 <html lang="en">
 <head>
