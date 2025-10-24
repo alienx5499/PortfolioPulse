@@ -14,6 +14,11 @@ declare global {
         preferredIndustry: string;
     };
 
+    type ResetPasswordFormData = {
+        password: string;
+        confirmPassword: string;
+    };
+
     type CountrySelectProps = {
         name: string;
         label: string;

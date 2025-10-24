@@ -67,14 +67,14 @@ const SignIn = () => {
                     validation={{ required: 'Password is required', minLength: 8 }}
                 />
 
-                <div className="flex justify-end">
-                    <a 
-                        href="/forgot-password" 
-                        className="text-sm text-primary hover:text-primary/80 font-medium"
-                    >
-                        Forgot your password?
-                    </a>
-                </div>
+                       <div className="flex justify-end">
+                           <a 
+                               href="/forgot-password-otp" 
+                               className="text-sm text-primary hover:text-primary/80 font-medium"
+                           >
+                               Forgot your password?
+                           </a>
+                       </div>
 
                 <Button type="submit" disabled={isSubmitting} className="primary-btn w-full mt-5">
                     {isSubmitting ? 'Signing In...' : 'Sign In'}
